@@ -1,0 +1,53 @@
+<div class='panel panel-primary' *ngIf='game'>
+    <div class='panel-heading'>
+        {{pageTitle + ': ' + game.title}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class="col-xs-12">
+                <div [hidden]="!errorMessage" class="alert alert-danger">
+                    {{errorMessage}}
+                </div>
+            </div>
+            <div class='col-xs-6'>
+                <div class='row'>
+                    <div class='col-xs-4'>Title:</div>
+                    <div class='col-xs-8'>
+                        <input [(ngModel)]="game.title" type="text" name="title" style="width:100%">
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-xs-4'>Year:</div>
+                    <div class='col-xs-8'>
+                        <input [(ngModel)]="game.year" type="text" name="year" style="width:100%">
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-xs-4'>Genre:</div>
+                    <div class='col-xs-8'>
+                        <input [(ngModel)]="game.genre" type="text" name="genre" style="width:100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <div class="row">
+            <div class="col-xs-6">
+                <a class='btn btn-primary' (click)='onBack()'>
+                    <i class='glyphicon glyphicon-chevron-left'></i>
+                </a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <a class="btn btn-warning" (click)="editGame()">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </a>
+                <a class="btn btn-danger" (click)="deleteGame()">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
